@@ -1,0 +1,22 @@
+import java.util.Random;
+public class RandomEncounter {
+	Random rand = new Random();
+
+	int randomEncounter;
+
+	public int getRandomEncounter() {
+		randomEncounter = rand.nextInt(3);
+		
+		switch (randomEncounter)
+		{
+		case 0 : 
+			break;
+		case 1 : System.out.println("A wild bat appeared!");
+			break;		
+		}
+		
+		return randomEncounter;
+	}
+	
+	
+}
