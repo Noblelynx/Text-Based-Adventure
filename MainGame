@@ -1,0 +1,66 @@
+import java.util.Scanner;
+public class MainGame 
+{
+
+	public static void main(String args[])
+	{
+		int weaponChoice;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter your name adventurer :");
+		String playerName = input.nextLine();
+
+		if (playerName == "Player")
+		{
+			System.out.println("You're not very original are you?");
+		}
+
+		System.out.println("Your name is " + playerName);
+
+		System.out.println("\nPick a class (1 or 2) \n1. Fighter (Great at hitting things, possesses questionable intelligence)\n2. Mage (Intelligence obtained by being a bookworm, terrible at sports)");
+		int pickClass = input.nextInt();
+
+		switch(pickClass)
+		{
+		case 1 : 	System.out.println("You picked Fighter.");
+		System.out.println("What's your weapon of choice?\n1. Sword\n2. Mace\n3. Axe");
+		weaponChoice = input.nextInt();
+
+		switch(weaponChoice)
+		{	
+		case 1 : System.out.println("You picked a Sword, you must like pointy things.");
+		break;
+		case 2 : System.out.println("You picked a Mace, bash heads in much?");
+		break;
+		case 3 : System.out.println("You picked an Axe, Gimli would be proud!");
+		break;
+		}
+
+		break;
+		case 2 : System.out.println("You picked Mage");
+		System.out.println("What's your weapon of choice?\n1. Staff\n2. Scepter\n3. Wand");
+		weaponChoice = input.nextInt();
+
+		switch(weaponChoice)
+		{	
+		case 1 : System.out.println("You picked a Staff, it's pretty much a fancy looking walking stick.");
+		break;
+		case 2 : System.out.println("You picked a Scepter, A rod with a gem in it? Cool.");
+		break;
+		case 3 : System.out.println("You picked a Wand, 5 points to Gryffindor!");
+		break;
+		}
+		break;
+		}
+
+		System.out.println("Time to start your adventure " + playerName);
+		
+		RandomEncounter randEncounter = new RandomEncounter();
+		
+		randEncounter.getRandomEncounter();
+
+
+
+
+		input.close();
+	}
+}
